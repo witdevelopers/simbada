@@ -1,0 +1,42 @@
+<!-- <p>board-binary-income works!</p> -->
+
+
+<div class="row">
+    <div class="col-md-10 offset-md-1">
+        <div class="card card-box">
+            <div class="card-head">
+                <header>Auto Binary Income</header>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover panel">
+                        <thead>
+                            <tr>
+                                <th>S.N</th>
+                                <th>Address</th>
+                                <th>Name</th>
+                                <th>Income</th>
+                                <th>Next Pool Deduction</th>
+                                <th>Net Income</th>
+                                <th>Date</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let boardInc of BoardIncome">
+                                <td>{{boardInc.srno}}</td>
+                                <td>{{boardInc.userId}}</td>
+                                <td>{{boardInc.name}}</td>
+                                <td>{{boardInc.income}}</td>
+                                <td>{{boardInc.nextPoolDeduction}}</td>
+                                <td>{{boardInc.netIncome}}</td>
+                                <td>{{boardInc.ondate}}</td>
+                                <td>{{boardInc.level}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

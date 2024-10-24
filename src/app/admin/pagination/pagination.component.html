@@ -1,0 +1,51 @@
+<div class="col-md-12">
+    <div class="d-md-flex justify-content-between">
+        <div class="col-md-6">
+            <div class="col-md-6 row">
+                <div class="col-md-9 col-9">
+                    <span class="pagination-sm"> Showing {{(((pageNo-1)*pageSize)+1)
+                        <=recordsCount?(((pageNo-1)*pageSize)+1):recordsCount}}-{{pageNo*pageSize
+                            <=recordsCount?pageNo*pageSize:recordsCount}} records of {{recordsCount}}</span>
+                </div>
+                <div class="col-md-3 col-3">
+                    <select [(ngModel)]="_pageSize" (change)="pagination(_pageSize, pageNo)">
+                        <option [ngValue]=10>10</option>
+                        <option [ngValue]=20>20</option>
+                        <option [ngValue]=50>50</option>
+                        <option [ngValue]=100>100</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <nav aria-label="page navigation">
+                <ul class="pagination pagination-sm mb-0">
+                    <li class="page-item" [ngClass]="pageNo==1?'disabled':''">
+                        <span class="page-link" (click)="pagination(pageSize, 1)">First</span>
+                    </li>
+                    <li class="page-item" [ngClass]="pageNo==1?'disabled':''">
+                        <span class="page-link" (click)="pagination(pageSize, pageNo-1)">
+                            <i class="fa fa-chevron-left small"></i>
+                        </span>
+                    </li>
+                    <li class="page-item disabled" style="cursor: default;">
+                        <span class="page-link">
+                            Page
+                            <strong class="font-weight-medium">{{pageNo<=maxPageNo?pageNo:maxPageNo}} </strong>
+                                    of
+                                    <strong class="font-weight-medium">{{maxPageNo}}</strong>
+                        </span>
+                    </li>
+                    <li class="page-item" [ngClass]="(pageNo==maxPageNo||maxPageNo==0)?'disabled':''">
+                        <span class="page-link" (click)="pagination(pageSize, pageNo+1)">
+                            <i class="fa fa-chevron-right small"></i>
+                        </span>
+                    </li>
+                    <li class="page-item" [ngClass]="(pageNo==maxPageNo||maxPageNo==0)?'disabled':''">
+                        <span class="page-link" (click)="pagination(pageSize, maxPageNo)">Last</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

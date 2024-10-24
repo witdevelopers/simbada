@@ -1,0 +1,71 @@
+
+<div class="row">
+    <div class="col-md-10 offset-md-1">
+        <div class="card card-box">
+            <div class="card-head">
+                <header>Board Count </header>
+            </div>
+          
+                   
+                    <form [formGroup]="boardPoolForm" (ngSubmit)="GetBoardCount()" class="board-cnt-form" >
+                        <div class="row">
+                            <div class="col">
+                                <label for="inputEmail3" class="col-sm-6 col-form-label">Entry</label>
+                                <mat-form-field class="golden col-sm-6" >
+                                    <!-- <mat-label>Select Pools  </mat-label> -->
+        
+                                    <mat-select [formGroup]="boardPoolForm" formControlName="poolId" (selectionChange)="GetBoardEntries()" >
+                                        <mat-option class="optionField" *ngFor="let pool of BoardPools"
+                                        [value]="pool.poolId"  selected>{{ pool.poolId }}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+    
+                            </div>
+                      
+                            <div class="col">
+                                <label for="inputEmail3" class="col-sm-6 col-form-label">ReEntry</label>
+
+                                <mat-form-field class="col golden  col-sm-6">
+                                    <!-- <mat-label>Select Entry</mat-label> -->
+                                    
+                                    <mat-select [formGroup]="boardPoolForm" formControlName="entryId" >
+                                        <mat-option *ngFor="let poolEntry of BoardEntries" 
+                                        [value]="poolEntry.entryId">{{ poolEntry.srno}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+        
+                        <button  class="mx-auto" mat-raised-button type="submit" color="primary" (click)="GetBoardCount" >View details</button>
+                        <!-- <mat-card-actions>
+                           
+                        </mat-card-actions> -->
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover panel" *ngIf="istableVisible">
+                                    <thead>
+                                        <tr>
+                                            <th>Level</th>
+                                            <th>Required Count</th>
+                                            <th>Actual Count</th>
+                                            <th>Net Income</th>
+                                        </tr>   
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let BoardCnt of BoardCount">
+                                            <td>{{BoardCnt.level}}</td>
+                                            <td>{{BoardCnt.requiredCount}}</td>
+                                            <td>{{BoardCnt.actualCount}}</td>
+                                            <td>{{BoardCnt.netIncome}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+            
+                        </div>
+                    </form>   
+                </div>
+            </div>
+        
+        </div>

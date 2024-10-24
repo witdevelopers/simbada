@@ -1,0 +1,100 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-box">
+            <div class="card-head">
+                <header>Bet Details</header>
+            </div>
+            <div class="card-body">
+                <div class="col-md-12">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>User Id or Mobile No.</mat-label>
+                                    <input matInput name="acc" [(ngModel)]=mobileNo #txtMobileNo=ngModel
+                                        class="width-100" />
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Period No.</mat-label>
+                                    <input matInput name="acc" [(ngModel)]=periodNo #txtPeriodNo=ngModel
+                                        [maxLength]="15" class="width-100"
+                                        onkeyup="this.value = this.value.replace(/[^0-9]/i, '')" />
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12 d-flex justify-content-center">
+                                <button mat-raised-button color="primary"
+                                    (click)="getRecords()">{{(txtMobileNo.value==""
+                                    &&
+                                    txtPeriodNo.value=="")?'View All':'View Details'}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <app-pagination [_recordsCount]="recordsCount" (paginationEvent)="paginationEvent($event)"></app-pagination>
+                <div class="col-md-12">
+                    <div class="table-responsive mt-2">
+                        <table class="table table-bordered" *ngIf="betInfo.length!=0">
+                            <thead class="admin">
+                                <tr>
+                                    <th>
+                                        Srno
+                                    </th>
+                                    <th>
+                                        User Id
+                                    </th>
+                                    <th>
+                                        Period No.
+                                    </th>
+                                    <th>
+                                        Bet On
+                                    </th>
+                                    <th>
+                                        Amount
+                                    </th>
+                                    <th>
+                                        Deduction
+                                    </th>
+                                    <th>
+                                        Bet Amount
+                                    </th>
+                                    <th>
+                                        Win/Lose Amount
+                                    </th>
+                                    <th>
+                                        Winner/Loser
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="admin">
+                                <tr *ngFor="let row of betInfo" class="{{'row-'+row.IsWinner}}">
+                                    <td>{{row.srno}}</td>
+                                    <td>{{row.userId}}</td>
+                                    <td>{{row.periodNo}}</td>
+                                    <td>
+                                        <span *ngIf='(["red", "green", "violet"].indexOf(row.betOn)>-1)' class="mr-1 color-circle" [style.background]="row.betOn"></span>
+                                        <span *ngIf='!(["red", "green", "violet"].indexOf(row.betOn)>-1)'>{{row.betOn}}</span>
+                                    </td>
+                                    <td>{{row.amount}}</td>
+                                    <td>{{row.deduction}}</td>
+                                    <td>{{row.betAmount}}</td>
+                                    <td [style.color]="(row.amountWinLose<0?'red':'green')">{{row.amountWinLose}}</td>
+                                    <td>{{row.isWinner}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div *ngIf="betInfo.length==0" style="background-color: cadetblue; padding: 6px; border-radius: 3px; color:white;">
+                            <label *ngIf="!noRecordsFound">Fetching...</label>
+                            <label *ngIf="noRecordsFound">No records found!</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

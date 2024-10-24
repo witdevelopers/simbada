@@ -1,0 +1,95 @@
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom shadow">
+        <div class="container-fluid ">
+            <div class="navbar-brand   d-flex align-items-center">
+                <a href="/"><img [src]="logo" width="80"  style="max-height: 80px"/></a>
+                <p style="color: white;font-size: 22px;padding-top: 15px; margin-left: 5px;">[{{userInfo.randomId}}]</p>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" id="btnToggler"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between " id="divNavMenus">
+                <ul class="navbar-nav ml-auto" (click)="collapse()">
+                    <li class="nav-item nav-menu p-1">
+                        <a class="nav-link text-dark m-1" routerLink="dashboard"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                    </li>
+                    <li class="nav-item nav-menu p-1">
+                        <a class="nav-link text-dark m-1" routerLink="directs"><i class="fa fa-users" aria-hidden="true"></i> Direct</a>
+                    </li>
+                  
+                    <li class="nav-item nav-menu p-1">
+                        <a class="nav-link text-dark m-1" routerLink="level-dividend"><i class="fa fa-arrow-up" aria-hidden="true"></i> Level Income</a>
+                    </li>
+                    <li class="nav-item nav-menu p-1">
+                        <a class="nav-link text-dark m-1" routerLink="roi-dividend"><i class="fas fa-wallet" aria-hidden="true"></i> Growth on Holdings</a>
+                    </li>
+                    <li class="nav-item nav-menu p-1">
+                        <a class="nav-link text-dark m-1" routerLink="vipPool"><i class="fa fa-glass" aria-hidden="true"></i> S.G.M Details</a>
+                    </li>
+                    <li class="nav-item nav-menu p-1">
+                        <a class="nav-link text-dark m-1" routerLink="rank"><i class="fa fa-angellist" aria-hidden="true"></i> SGM Income</a>
+
+                    </li>
+                    <li class="nav-item nav-menu p-1">
+                        <a class="nav-link text-dark m-1" routerLink="boardIncome"><i class="fa fa-500px" aria-hidden="true"></i>Auto Binary Income</a>
+                    </li>
+                    <li class="nav-item nav-menu p-1">
+                        <a class="nav-link text-dark m-1" routerLink="dailyeor"><i class="fa fa-crosshairs" aria-hidden="true"></i> Daily  EOH</a>
+                    </li>
+                    
+                    <li class="nav-item nav-menu p-1">
+                        <a class="nav-link text-dark m-1" routerLink="miningIncome"><i class="fa fa-sheqel" aria-hidden="true"></i> Mining Income</a>
+                    </li>
+
+                    <li class="nav-item nav-menu p-1">
+                        <a class="nav-link text-dark m-1" routerLink="token/buy"><i class="fa fa-stack-exchange" aria-hidden="true"></i> Buy/Sell Token</a>
+                    </li>
+                    <li class="nav-item nav-menu p-1">
+                        <a class="nav-link text-dark m-1" routerLink="boardCount"><i class="fa fa-houzz" aria-hidden="true"></i> Board Count</a>
+                    </li>
+
+                    <li class="nav-item nav-menu p-1">
+                        <a class="nav-link text-dark m-1" routerLink="withdraw-dividend"><i class="fa fa-renren" aria-hidden="true"></i>Withdraw Income</a>
+                    </li>
+                    <li class="nav-item nav-menu p-1">
+                        <a class="nav-link text-dark m-1" routerLink="games"><i class="fa fa-gamepad" aria-hidden="true"></i>Games</a>
+                    </li>
+                    <!-- <li class="nav-item nav-menu p-1">
+                        <a class="nav-link text-dark m-1" routerLink="transactions"><i class="fas fa-sync"></i> Transactions</a>
+                    </li> -->
+                    <!-- <li  class="nav-item nav-menu p-1">
+                        <button class="nav-link text-dark m-1 " mat-button [matMenuTriggerFor]="belowMenu" ><i class="fas fa-sync"></i> Transactions <mat-icon>keyboard_arrow_down</mat-icon></button>
+                            <mat-menu #belowMenu="matMenu" >
+                                <button mat-menu-item><a class="nav-link sub-menu" ><i class="fas fa-arrow-right"></i> Token buy</a></button>
+                                <button mat-menu-item><a class="nav-link sub-menu" ><i class="fas fa-arrow-right"></i> Token sell</a></button>
+                                <button mat-menu-item> <a class="nav-link sub-menu" ><i class="fas fa-arrow-right"></i> MTA withdrawal </a></button>
+                                <button mat-menu-item> <a class="nav-link sub-menu" ><i class="fas fa-arrow-right"></i> withdraw dividend</a></button>
+                            </mat-menu>
+                    </li> -->
+                 
+                    <li class="mr-5">
+                    </li>
+                    <li class="nav-item">
+                        <button mat-raised-button color="warn" class="mt-2" (click)=logout()> <i class="fa fa-power-off" aria-hidden="true"></i> Logout</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+    <main role="main" class="pb-3 mt-4">
+        <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+    </main>
+
+
+<footer class=" footer text-white">
+    <div class="container">
+        &copy; 2024 - {{appName}}
+    </div>
+</footer>

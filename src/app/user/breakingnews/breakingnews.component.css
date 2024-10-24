@@ -1,0 +1,23 @@
+/* Center images in the carousel */
+.carousel-inner img {
+    display: block;
+    margin: 0 auto;
+    width:100%;
+  }
+  
+  /* Center content in the slideshow container */
+  .slideshow-container {
+    text-align: center;
+  }
+  
+  .mySlides {
+    display: none;
+  }
+  
+  .mySlides.active {
+    display: block;
+  }
+  #demo{
+    margin-bottom: 60px;
+    /* width: 611px; */
+  }

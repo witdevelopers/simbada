@@ -1,0 +1,151 @@
+
+
+
+html, body { height: 100%; }
+body {
+    margin: 0;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 13px;
+    line-height: 1.42857143;
+    background-color: #f0f2f5;
+}
+.nav-link {
+    display: block;
+    padding: 0.5rem 0.5rem;
+    font-size: 15px;
+    font-family: 'Ubuntu';
+    font-weight: 500 !important;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+
+::selection {
+    color: #FFF;
+    background-color: #00635a;
+}
+
+.card-head {
+    border-radius: 2px 2px 0 0;
+    border-bottom: 1px solid rgb(79, 134, 134);
+    padding: 2px;
+    /* text-transform: uppercase; */
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 40px;
+    min-height: 40px;
+}
+
+.card-head header {
+    display: inline-block;
+    padding: 11px 20px;
+    vertical-align: middle;
+    line-height: 17px;
+    font-size: 18px;
+    color: #119cbb;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.border-radius-12{
+    border-radius: 12px;
+}
+
+.border-radius-8{
+    border-radius: 8px;
+}
+
+.width-100{
+    width: 100% !important;
+}
+
+.enabled{
+    color: currentColor !important;
+}
+
+.card {
+    border: 3px solid rgba(6, 42, 97, 0.125);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+}
+
+.container{
+    max-width: 100% !important;
+}
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.nav-menu:hover{
+    background-color:lightgreen;
+    border-radius: 5px;
+}
+
+.nav-menu{
+    cursor: pointer !important;
+}
+
+.nav-link{
+    font-weight: bold !important;
+    font-size: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.mr-5 {
+    margin-right: 3rem!important;
+}
+
+main {
+    height: calc(100vh - 130px);
+    overflow: auto;
+}
+
+.card-head {
+    border-radius: 2px 2px 0 0;
+    border-bottom: 1px solid rgb(79,134,134);
+    padding: 2px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 40px;
+    min-height: 40px;
+}
+
+mat-form-field {
+    width: 100%;
+    background-color: aliceblue;
+}
+
+.mat-form-field-wrapper {
+    margin-bottom: -1.26em;
+}
+
+.mb-70px{
+    margin-bottom: 70px !important;
+}
+
+.page-item{
+    cursor:pointer;
+}
+
+.row-Win{
+    background-color: #ffd65c;
+    color:green;
+}
+
+.row-Lose{
+    background-color: #ffd65c;
+    color:red;
+}
+
+.navbar-nav li{
+    padding: 5px;
+}

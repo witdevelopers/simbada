@@ -1,0 +1,597 @@
+<div id="divDashboardContainer">
+    <div class="row justify-content-left">
+
+     
+
+        <div class="col-xl-12 col-md-12 col-12">
+            <div class="widget-section">
+                <div class="widget-card bg-gradient-danger1 text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body1">
+                        <!-- <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div> -->
+                        <marquee behavior="alternate">
+                            <div class="marquee-left ">
+                                <div class="infobox-data text-center ">
+                                    <p>1 P4S : 0.50 and Qty. : 2100000</p>
+                                    <h6 class="font-weight-normal">Simbada ({{coinSymbol}}) Price</h6>
+                                    <h2 class="mb-0">
+                                        <span class="progress-description">1 {{coinSymbol}} = {{CoinPrice |
+                                            number:"1.9"}} USDT </span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="col-md-4 col-sm-12">
+            <div class="sarcal">
+                <app-mine [secondsRemaining]="userInfo?.miningTimeRemaining_Seconds"></app-mine>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <app-prize-pool></app-prize-pool>
+            <!-- <app-prize-pool></app-prize-pool>
+            <app-prize-pool></app-prize-pool>
+            <app-prize-pool></app-prize-pool> -->
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <br> <br>
+                 </div>
+    </div>
+    <div class="row">
+
+        <div class="col-xl-12 col-md-12 col-12 d-none">
+            <div class="widget-section">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Simbada {{coinSymbol}} Price</h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">1 {{coinSymbol}} ~ {{CoinPrice | number:"1.9"}} USDT
+                                </span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section" >
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger height">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Deposits Details</h6>
+                            <!-- <h2 class="mb-0">
+                                <span class="progress-description">{{userInfo.totalCoins}} {{coinSymbol}}</span>
+                            </h2> -->
+                            <div class="text-center">
+                                <p>My Deposit : ${{userInfo?.packageValue}}</p>
+                                <p>My 2x Returns : ${{2*userInfo?.packageValue}}</p>
+                                <p>Total Withdrawal : ${{userInfo?.amountWithdrawn}}</p>
+                                <p>Remaining Balance : ${{2 * userInfo?.packageValue - (userInfo?.amountWithdrawn)}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section" routerLink="/user/token-buy-history">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal"> Holding Details </h6>
+
+
+                            <div class="text-center">
+                                <p>Coins Holding : {{userInfo?.totalCoins}} {{coinSymbol}}</p>
+                                <p>Holding Values : ${{(userInfo?.totalCoins * CoinPrice) |
+                                    number:"1.4"}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Deposit</h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">{{userInfo?.packageValue}} Matic</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal"> Direct Details</h6>
+                            <div class="text-center">
+                                <p>Total Direct : {{userInfo?.totalDirects}}</p>
+                                <p>Total Direct Business : ${{userInfo?.directsBusiness}}</p>
+
+                            </div>
+                            <!-- <h2 class="mb-0">
+                                <span class="progress-description">{{userInfo?.totalDirects}}</span>
+                            </h2> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Team Details</h6>
+                            <div class="text-center">
+                                <p>Total Team : {{userInfo?.totalTeam}}</p>
+                                <p>Total Team Business : ${{userInfo?.teamBusiness}}</p>
+                            </div>
+                            <!-- <h2 class="mb-0">
+                                <span class="progress-description">{{userInfo?.teamBusiness}}</span>
+                            </h2> -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section" routerLink="/user/level-dividend" >
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Level Income</h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">${{userInfo?.levelIncome}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section" routerLink="/user/roi-dividend">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Growth On Holdings</h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">${{userInfo?.poiIncome}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section" routerLink="/user/rank">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">S.G.M Income</h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">${{userInfo?.vipIncome}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section" routerLink="/user/boardIncome">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Auto Binary Income</h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">${{userInfo?.boardBinaryIncome}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section" routerLink="/user/dailyeor">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">DAILY (E.O.H)  </h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">${{userInfo?.dailyEORIncome}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section" routerLink="/user/miningIncome">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Total Minined P4S</h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">{{userInfo?.miningIncome}} (P4S)</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section" routerLink="/user/vip">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">SGM RANK </h6>
+                            <!-- <h2 class="mb-0">
+                                <span class="progress-description">{{userInfo?.currentRank}}</span>
+                            </h2> -->
+                            <div class="text-center">
+                                <p> {{userInfo?.currentRank_Package}} </p>
+                                <p>[ {{userInfo?.currentRank}} ]</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section" routerLink="/user/vip">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Residual Income Status</h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">N/A</span>
+                            </h2>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section" routerLink="/user/vip">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Quarterly Dividend Pool </h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">N/A</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Total Income</h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">${{userInfo?.totalIncome}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12" style="display: none;">
+            <div class="widget-section">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Total Dividend Earned</h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">${{userInfo?.totalIncme}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section" routerLink="/user/income-withdrawal-history">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Income Withdrawn</h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">${{userInfo?.amountWithdrawn}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="col-xl-4 col-md-6 col-12" style="display: none;">
+            <div class="widget-section">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Balance Dividend</h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">{{userInfo?.}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+        <!-- <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Business For {{nextRankName}}</h6>
+                            <h2 class="mb-0">
+                                <span
+                                    class="progress-description">{{businessCollectedForNextRank}}/{{totalBusinessRequiredForNextRank}}</span>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        
+
+
+
+        <!-- <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal">Coins Holding</h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">{{userInfo?.totalCoins}} {{coinSymbol}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 col-12">
+            <div class="widget-section">
+                <div class="widget-card bg-gradient-danger text-white text-center shadow card-shadow-danger">
+                    <div class="infobox card-body">
+                        <div class="infobox-icon">
+                            <img src="assets/F.png" />
+                        </div>
+                        <div class="infobox-data">
+                            <h6 class="font-weight-normal"> Holding Value</h6>
+                            <h2 class="mb-0">
+                                <span class="progress-description">{{(userInfo?.totalCoins * CoinPrice) |
+                                    number:"1.4"}}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+
+    </div>
+
+    <!-- <app-vip-pool-details></app-vip-pool-details> -->
+    <!-- <app-mine [secondsRemaining]="userInfo?.miningTimeRemaining_Seconds"></app-mine> -->
+
+    <div class="w-auto">
+
+        <div class="row ">
+            <div class="col-sm-9 col-md-6 col-lg-8 col-xl-10">
+                <div class="form-group mt-3  row">
+                    <div class="form-group col-md-12  col-12">
+                        <div class="card border-radius-8 p-2 shadow">
+                            <label><b>Simbada Referral Link</b></label>
+                            <label id="lblReferralLink"
+                                class="form-control font-size-12 overflow-auto">{{website}}/auth/register/{{userAddress}}</label>
+                            <div class="form-group1 row">
+                                <div class="col-md-6 col-6">
+                                    <a id="aReferralLink" href="{{website}}/auth/register/{{userAddress}}"
+                                        target="_blank" mat-raised-button class="btn-custom-color-2">Open</a>
+                                </div>
+                                <div class="col-md-6 col-6 text-right">
+                                    <button onclick="CopyToClipboard('lblReferralLink'); return false;"
+                                        mat-raised-button class="btn-custom-color">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12 col-12">
+                        <div class="card border-radius-8 p-2 shadow">
+                            <label><b>User Wallet Address : #{{userInfo?.randomId}}</b></label>
+                            <label id="lblWalletAddress"
+                                class="form-control font-size-12 overflow-auto">{{userAddress}}</label>
+                            <div class="form-group1 row">
+                                <div class="col-md-6 col-6">
+                                    <a id="aWalletLink" href="{{blockchainExplorer}}/address/{{userAddress}}"
+                                        target="_blank" mat-raised-button class="btn-custom-color-2">Open</a>
+                                </div>
+                                <div class="col-md-6 col-6 text-right">
+                                    <button onclick="CopyToClipboard('lblWalletAddress'); return false;"
+                                        mat-raised-button class="btn-custom-color">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12 col-12">
+                        <div class="card border-radius-8 p-2 shadow">
+                            <label><b>Simbada Sponsor Address</b></label>
+                            <label id="lblSponsorAddress"
+                                class="form-control font-size-12 overflow-auto">{{sponsorAddress}}</label>
+                            <div class="form-group1 row">
+                                <div class="col-md-6 col-6">
+                                    <a id="aSponsorLink" href="{{blockchainExplorer}}/address/{{sponsorAddress}}"
+                                        target="_blank" mat-raised-button class="btn-custom-color-2">Open</a>
+                                </div>
+                                <div class="col-md-6 col-6 text-right">
+                                    <button onclick="CopyToClipboard('lblSponsorAddress'); return false;"
+                                        mat-raised-button class="btn-custom-color">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12  col-12">
+                        <div class="card p-2 shadow border-radius-8">
+                            <label><b>Simbada Contract Address</b></label>
+                            <label id="lblSmartContractAddress"
+                                class="form-control font-size-12 overflow-auto">{{contractAddress}}</label>
+                            <div class="form-group1 row">
+                                <div class="col-md-6 col-6">
+                                    <a id="aSmartContractLink"
+                                        href="{{blockchainExplorer}}/address/{{contractAddress}}#code" target="_blank"
+                                        mat-raised-button class="btn-custom-color-2">Open</a>
+                                </div>
+                                <div class="col-md-6 col-6 text-right">
+                                    <button onclick="CopyToClipboard('lblSmartContractAddress'); return false;"
+                                        mat-raised-button class="btn-custom-color">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12  col-12">
+                        <div class="card p-2 shadow border-radius-8">
+                            <label><b>Latest News </b></label>
+                            <span class="progress-description"></span>
+                            <div class="text-center">
+                                <p> {{userInfo?.news}} </p>                               
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+           
+            
+            <!-- <app-breakingnews ></app-breakingnews> -->
+
+            <!-- <div class="col-xl-6 col-md-6 col-12">
+                        <div class="widget-section">
+                            <div class="widget-card text-white text-center shadow card-shadow-danger">
+                                <app-price-chart></app-price-chart>
+                            </div>
+                        </div>
+                    </div> -->
+
+        </div>
+        <div class=" ">
+            <app-breakingnews images='imageInfo'></app-breakingnews>
+        </div>
+    </div>
+
+</div>

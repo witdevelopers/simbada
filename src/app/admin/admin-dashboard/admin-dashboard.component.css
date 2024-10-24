@@ -1,0 +1,19 @@
+
+.row-possible-winner{
+    background-color: #ffc107;
+}
+
+.row-confirmed-winner{
+    background-color: #218838;
+}
+
+.admin th{
+    color: black;
+}
+
+.admin td{
+    color: black;
+}
+tr{
+    background-color:  #ffc107;
+}

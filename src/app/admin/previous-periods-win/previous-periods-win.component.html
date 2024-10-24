@@ -1,0 +1,31 @@
+
+<div class="card-head">
+    <header>Previous Periods Details</header>
+</div>
+<app-pagination [_recordsCount]="recordsCount" (paginationEvent)="paginationEvent($event)"></app-pagination>
+<div class="table-responsive">
+    <table class="table table-bordered" *ngIf="periodHistory.data && periodHistory.data.length!=0"  >
+        <thead class="admin" >
+            <tr>
+                <th>Period</th>
+                <th>Price</th>
+                <th>Number</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody class="admin" >
+            <tr *ngFor="let row of periodHistory.data">
+                <td>{{row.period}}</td>
+                <td>{{row.price}}</td>
+                <td [style.color]="row.color1">{{row.number}}</td>
+                <td>
+                    <span class="color-circle" [style.background]="row.color1"></span>
+                    <span class="color-circle" [style.background]="row.color2"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="periodHistory.data && periodHistory.data.length==0">
+        <label>Fetching...</label>
+    </div>
+</div>

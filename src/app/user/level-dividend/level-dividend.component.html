@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-10 offset-md-1">
+        <div class="card card-box">
+            <div class="card-head">
+                <header>Level Income</header>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped panel"  *ngIf="directs.length>0">
+                        <thead>
+                            <tr>
+                                <th>S.N</th>
+                                <th>Date</th>
+                                <th>Address</th>                               
+                                <th>Income</th>
+                                <th>On Amount</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let EORInc of directs">
+                                <td>{{EORInc.srno}}</td>
+                                <td>{{EORInc.ondate}}</td>
+                                <td>{{EORInc.fromUserId}}</td>                                
+                                <td>{{EORInc.income}}</td>                               
+                                <td>{{EORInc.onAmount}}</td>                               
+                                <td>{{EORInc.level}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <label *ngIf="directs.length==0">No data found!</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

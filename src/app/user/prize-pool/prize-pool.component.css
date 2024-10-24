@@ -1,0 +1,56 @@
+.container {
+    text-align: center;
+    font-family: sans-serif;
+  }
+  
+.overall-prize {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.prize-amount{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #e1ab30;
+}
+  .countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin: 0 auto;
+  }
+  @media(max-width:900px){
+    .countdown {
+      font-size: 14px;
+    }
+    .countdown .box {
+      padding: 0.5rem;
+      border-radius: 0.1rem;
+    }
+    .countdown .colon{
+      padding: 0.4rem;
+    }
+    
+  }
+
+  .countdown .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #e1ab30;
+    border-radius: 0.25rem;
+  }
+  
+  .countdown span {
+    font-weight: bold;
+  }
+
+  .countdown .colon{
+    padding: 1rem;
+  }
+  
+  .card-body{
+    color: #fff;
+  }

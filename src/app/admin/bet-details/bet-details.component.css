@@ -1,0 +1,14 @@
+.admin th{
+    color: black;
+}
+.admin td{
+    color: black;
+}
+
+
+.color-circle{
+    display: inline-block;
+    border-radius: 20px;
+    width: 15px;
+    height: 15px;
+}

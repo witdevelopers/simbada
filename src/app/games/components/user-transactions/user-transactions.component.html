@@ -1,0 +1,48 @@
+<div class="card mt-2">
+  <div class="card-head">
+    <header>User Transactions</header>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped panel">
+        <thead>
+          <tr>
+            <th>Address</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="data">
+          <tr *ngFor="let item  of data" [class.tr-credit]="item.type=='Credit'" [class.tr-debit]="item.type=='Debit'">
+            <td>{{item.userId}}</td>
+            <td>{{item.type}}</td>
+            <td>{{item.amount}}</td>
+            <td>{{item.ondate | Gdate }}</td>
+            <td>{{item.transactionRemarks}}</td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="data && data.length==0">
+          <tr>
+            <td colspan="100%">
+              <h3 style="font-weight: bold;">No records found</h3>
+            </td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="!data">
+          <tr>
+            <td colspan="100%">
+              <h5 style="font-weight: bold;">Fetching data...</h5>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row mb-3 pl-2">
+        <mat-paginator (page)="onPageChange($event)" [length]="total" [pageSize]="pageSize" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page">
+        </mat-paginator>
+      </div>
+      
+    </div>
+  </div>
+</div>

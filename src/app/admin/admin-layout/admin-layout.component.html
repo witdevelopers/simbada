@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-light navbar-toggleable-sm bg-white border-bottom shadow">
+    <a class="navbar-brand mr-5" routerLink="dashboard">
+        <h2>{{appName}}</h2>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="nav-link text-dark " routerLink="dashboard" routerLinkActive="active"><i class="fa fa-home"
+                        aria-hidden="true"></i> Home</a>
+            </li>
+            <!-- <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="dropdown-toggle nav-link text-dark" role="button" data-toggle="dropdown"><i class="fa fa-user"
+                        aria-hidden="true"></i> User</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-dark " routerLink="user-details">User Details</a>
+                    <a class="dropdown-item text-dark " routerLink="update-bank">Update Bank</a>
+                    <a class="dropdown-item text-dark " routerLink="promotion-details">Promotion</a>
+                </div>
+            </li> -->
+            <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="dropdown-toggle nav-link text-dark" role="button" data-toggle="dropdown"><i
+                        class="fa fa-home2" aria-hidden="true"></i> Game</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-dark" routerLink="bet-details"> Bet Details</a>
+                    <!-- <a class="dropdown-item text-dark" routerLink="investment-requests"> Investment</a>
+                    <a class="dropdown-item text-dark" routerLink="downline-investment"> Downline Investment</a>
+                    <a class="dropdown-item text-dark" routerLink="upi"> Upi</a> -->
+                </div>
+            </li>
+            <!-- <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="dropdown-toggle nav-link text-dark" role="button" data-toggle="dropdown"><i
+                        class="fa fa-home2" aria-hidden="true"></i> Income</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-dark " routerLink="referral-income"> Referral Income</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
+                <a class="dropdown-toggle nav-link text-dark" role="button" data-toggle="dropdown"><i
+                        class="fa fa-home2" aria-hidden="true"></i> Wallet</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-dark" routerLink="withdrawal-requests"> Withdrawal</a>
+                    <a class="dropdown-item text-dark" routerLink="credit-debit"> Credit/Debit</a>
+                    <a class="dropdown-item text-dark" routerLink="passbook"> Passbook</a>
+                </div>
+            </li> -->
+
+            <li class="nav-item">
+                <button mat-raised-button color="warn" class="mt-2" (click)=logout()> <i class="fa fa-power-off"
+                        aria-hidden="true"></i> Logout</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+<main role="main" class="pb-3 mt-4">
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</main>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
